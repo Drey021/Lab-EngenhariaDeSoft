@@ -1,19 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividades de Aula</title>
+    <title>Minhas Tarefas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        nav {
+            background-color: #f1f1f1;
+            border-top: 1px solid #ccc;
+        }
+
+        .folders {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+        }
+
+        li {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #3498db;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="semana1.html">Semana 1</a></li>
-            <li><a href="semana2.html">Semana 2</a></li>
-            <li><a href="semana3.html">Semana 3</a></li>
-            <li><a href="semana4.html">Semana 4</a></li>
-            <li><a href="semana5.html">Semana 5</a></li>
-        </ul>
-    </nav>
+  <header>
+    <h1>Menu de Tarefas</h1>
+  </header>
+  <nav>
+    <br>
+    <ul class="folders">
+      <li><a href="tarefas/semana1/atividade1.html">Tarefa 1</a></li>
+      <li><a href="tarefas/semana2/atividade2.html">Tarefa 2</a></li>
+      <li><a href="tarefas/semana3/atividade3.html">Tarefa 3</a></li>
+      <li><a href="tarefas/semana4/atividade4.html">Tarefa 4</a></li>
+      <li><a href="tarefas/semana5/atividade5.html">Tarefa 5</a></li>
+      <li><a href="tarefas/semana6/atividade6.html">Tarefa 6</a></li>
+      <li><a href="tarefas/semana7/atividade7.html">Tarefa 7</a></li>
+      <li><a href="tarefas/semana8/atividade8.html">Tarefa 8</a></li>
+      <li><a href="tarefas/semana9/atividade9.html">Tarefa 9</a></li>
+      <li><a href="tarefas/semana10/atividade10.html">Tarefa 10</a></li>
+      <li><a href="tarefas/semana11/atividade11.html">Tarefa 11</a></li>
+      <li><a href="tarefas/semana12/atividade12.html">Tarefa 12</a></li>
+    </ul>
+  </nav>
 </body>
 </html>
