@@ -1,2 +1,2 @@
 # Lab-EngenhariaDeSoft
-Laboratório de engenharia de software
+Atividades da disciplina de Laboratório de engenharia de software
