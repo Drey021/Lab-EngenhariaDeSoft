@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificar Número Primo</title>
+</head>
+<body>
+  <script>
+
+    function isPrime(number) {
+      if (number <= 1) {
+        return false;
+      }
+
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+    const inputNumber = parseInt(prompt("Digite um número inteiro positivo:"));
+    if (!isNaN(inputNumber) && inputNumber > 0) {
+      if (isPrime(inputNumber)) {
+        alert(`${inputNumber} é um número primo.`);
+      } else {
+        alert(`${inputNumber} não é um número primo.`);
+      }
+    } else {
+      alert("Por favor, digite um número inteiro positivo válido.");
+    }
+
+  </script>
+
+    <button a href="atividade1.html" class="back-button" onclick="history.back()">Voltar</button>
+
+</body>
+</html>
