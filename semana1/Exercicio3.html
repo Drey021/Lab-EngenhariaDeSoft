@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificar Par ou Ímpar</title>
+</head>
+<body>
+  <script>
+    const inputNumber = parseInt(prompt("Digite um número inteiro positivo:"));
+    if (!isNaN(inputNumber) && inputNumber > 0) {
+      if (inputNumber % 2 === 0) {
+        alert(`${inputNumber} é um número par.`);
+      } else {
+        alert(`${inputNumber} é um número ímpar.`);
+      }
+    } else {
+      alert("Por favor, digite um número inteiro positivo válido.");
+    }
+  </script>
+
+  
+  <button a href="atividade1.html" class="back-button" onclick="history.back()">Voltar</button>
+
+</body>
+</html>
