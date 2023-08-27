@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/tarefas.png" type="image/x-icon">
+    <link rel="stylesheet" href="exerc3.css">
+    <title>Verificador de Palíndromo</title>
+</head>
+<body>
+    <div class="container">
+        <label for="inputText">Digite uma palavra ou frase:</label>
+        <input type="text" id="inputText">
+        <button onclick="checkPalindrome()">Verificar</button><br><br>
+        <a href="atividade3.html" class="back-button">Voltar</a>
+    </div>
+
+    <script>
+        function isPalindrome(text) {
+            const cleanText = text.toLowerCase().replace(/\s/g, "");
+            const reversedText = cleanText.split("").reverse().join("");
+            return cleanText === reversedText;
+        }
+
+        function checkPalindrome() {
+            const inputText = document.getElementById("inputText").value;
+            
+            if (isPalindrome(inputText)) {
+                alert(`"${inputText}" é um palíndromo!`);
+            } else {
+                alert(`"${inputText}" não é um palíndromo.`);
+            }
+        }
+    </script>
+</body>
+</html>

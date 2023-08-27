@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../img/tarefas.png" type="image/x-icon">
+  <link rel="stylesheet" href="exerc1.css">
+  <title>Data Atual</title>
+</head>
+<body>
+  <div id="data">
+    <h1>Data Atual</h1>
+    <p id="data-formatada">Carregando data...</p>
+  </div>
+  
+  <script>
+    const diasDaSemana = [
+      "Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira",
+      "Quinta-feira", "Sexta-feira", "Sábado"
+    ];
+    
+    const meses = [
+      "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+      "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+    ];
+    
+    const dataAtual = new Date();
+    const diaDaSemana = diasDaSemana[dataAtual.getDay()];
+    const dia = dataAtual.getDate();
+    const mes = meses[dataAtual.getMonth()];
+    const ano = dataAtual.getFullYear();
+    const dataFormatada = `${diaDaSemana}, ${dia} de ${mes} de ${ano}`;
+    
+    document.getElementById("data-formatada").textContent = dataFormatada;
+  </script>
+
+  <a href="atividade3.html" class="back-button">Voltar</a>
+</body>
+</html>

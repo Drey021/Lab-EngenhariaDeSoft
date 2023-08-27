@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/tarefas.png" type="image/x-icon">
+    <link rel="stylesheet" href="exerc2.css">
+    <title>Relógio</title>
+</head>
+<body>
+    <div id="clock-container">
+        <div id="clock"></div>
+        <a href="atividade3.html" class="back-button">Voltar</a>
+    </div>
+    <script>
+        function updateClock() {
+            const clockContainer = document.getElementById("clock");
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, "0");
+            const minutes = now.getMinutes().toString().padStart(2, "0");
+            const seconds = now.getSeconds().toString().padStart(2, "0");
+            const timeFormatted = `${hours}:${minutes}:${seconds}`;
+            clockContainer.textContent = timeFormatted;
+
+            setTimeout(updateClock, 1000);
+        }
+
+        updateClock();
+    </script>
+</body>
+</html>
