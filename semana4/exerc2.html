@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="../img/tarefas.png" type="image/x-icon">
+<link rel="stylesheet" href="exerc2.css">
+<title>Carro Formulário</title>
+</head>
+<body>
+    <h1>Carro Formulario</h1>
+    <form id="carForm">
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca"><br>
+
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo"><br>
+
+        <label for="ano">Ano:</label>
+        <input type="number" id="ano" name="ano"><br>
+
+        <label for="cor">Cor:</label>
+        <input type="text" id="cor" name="cor"><br>
+
+        <label for="kilometragem">Kilometragem:</label>
+        <input type="number" id="kilometragem" name="kilometragem"><br>
+
+        <label for="valor_fipe">Valor FIPE:</label>
+        <input type="number" id="valor_fipe" name="valor_fipe"><br>
+
+        <div class="button-container">
+            <button type="button" id="btnVoltar" onclick="window.history.back()">Voltar</button>
+            <button type="button" onclick="calcularCarro()">Calcular</button>
+        </div>
+    </form>
+
+    <p id="resultado"></p>
+  <script src="exerc2.js"></script>
+</body>
+</html>
