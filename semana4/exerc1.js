@@ -1,39 +1,122 @@
-function toggleForm() {
-  var tipoUsuario = document.getElementById("tipoUsuario").value;
-  var formProfessor = document.getElementById("formProfessor");
-  var formAluno = document.getElementById("formAluno");
+class Pessoa {
+  constructor(nome, email, dataNasc, telefoneFixo, telefoneCelular) {
+    this.nome = nome;
+    this.email = email;
+    this.dataNasc = dataNasc;
+    this.telefoneFixo = telefoneFixo;
+    this.telefoneCelular = telefoneCelular;
+  }
 
-  if (tipoUsuario === "professor") {
-    formProfessor.style.display = "block";
-    formAluno.style.display = "none";
-  } else {
-    formAluno.style.display = "block";
-    formProfessor.style.display = "none";
+  validarDados() {
+    let camposObrigatorios = [
+      "nome",
+      "email",
+      "dataNasc",
+      "telefoneFixo",
+      "telefoneCelular",
+    ];
+
+    for (let campo of camposObrigatorios) {
+      if (!this[campo]) {
+        return false;
+      }
+    }
+    return true;
   }
 }
 
-function mostrarValores() {
-  var tipoUsuario = document.getElementById("tipoUsuario").value;
-  var form = tipoUsuario === "professor" ? "formProfessor" : "formAluno";
-  var formData = document.getElementById(form).elements;
-  
-  var valores = "";
-  for (var i = 0; i < formData.length; i++) {
-    valores += formData[i].name + ": " + formData[i].value + "\n";
+class Aluno extends Pessoa {
+  constructor(
+    nome,
+    email,
+    dataNasc,
+    telefoneFixo,
+    telefoneCelular,
+    matricula,
+    curso
+  ) {
+    super(nome, email, dataNasc, telefoneFixo, telefoneCelular);
+    this.matricula = matricula;
+    this.curso = curso;
   }
 
-  alert(valores);
-}
+  validarDados() {
+    super.validarDados();
 
-function voltarPaginaAnterior() {
-  window.history.back();
-}
-function limparFormulario() {
-  var tipoUsuario = document.getElementById("tipoUsuario").value;
-  var form = tipoUsuario === "professor" ? "formProfessor" : "formAluno";
-  var formData = document.getElementById(form).elements;
+    let camposObrigatorios = ["matricula", "curso"];
 
-  for (var i = 0; i < formData.length; i++) {
-    formData[i].value = "";
+    for (let campo of camposObrigatorios) {
+      if (!this[campo]) {
+        return false;
+      }
+    }
+    return true;
   }
 }
+
+class Professor extends Pessoa {
+  constructor(
+    nome,
+    email,
+    dataNasc,
+    telefoneFixo,
+    telefoneCelular,
+    area,
+    lattes
+  ) {
+    super(nome, email, dataNasc, telefoneFixo, telefoneCelular);
+    this.area = area;
+    this.lattes = lattes;
+  }
+
+  validarDados() {
+    super.validarDados();
+
+    let camposObrigatorios = ["area", "lattes"];
+
+    for (let campo of camposObrigatorios) {
+      if (!this[campo]) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
+let usuarios = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+  const professorInputs = document.querySelectorAll(
+    '[name="area"], [name="lattes"]'
+  );
+  const alunoInputs = document.querySelectorAll('[name="curso"]');
+
+  alunoInputs.forEach(
+    (alunoInput) => (alunoInput.style.display = "none")
+  );
+  professorInputs.forEach(
+    (professorInput) => (professorInput.style.display = "none")
+  );
+
+  const tipoUsuarioInput = document.getElementsByName("tipoUsuario");
+
+  tipoUsuarioInput.forEach((input) => {
+    input.addEventListener("change", () => {
+      if (input.value === "professor") {
+        professorInputs.forEach(
+          (professorInput) => (professorInput.style.display = "block")
+        );
+        alunoInputs.forEach(
+          (alunoInput) => (alunoInput.style.display = "none")
+        );
+      } else if (input.value === "aluno") {
+        professorInputs.forEach(
+          (professorInput) => (professorInput.style.display = "none")
+        );
+        alunoInputs.forEach(
+          (alunoInput) => (alunoInput.style.display = "block")
+        );
+      }
+    });
+  });
+});
