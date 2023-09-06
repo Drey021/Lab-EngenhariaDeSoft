@@ -1,60 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Formulário de Cadastro</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="shortcut icon" href="../img/tarefas.png" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="exerc1.css">
   <script src="exerc1.js"></script>
 </head>
 <body>
-  <h1>Formulário de Cadastro</h1>
-  
-  <label for="tipoUsuario">Escolha o tipo de usuário:</label>
-  <select id="tipoUsuario" onchange="toggleForm()">
-    <option value="professor">Professor</option>
-    <option value="aluno">Aluno</option>
-  </select>
-
-  <form id="formProfessor" style="display: none;">
-    <h2>Formulário para Professor</h2>
-    <label for="nomeProf">Nome:</label>
-    <input type="text" id="nomeProf" name="Nome"><br>
-    <label for="emailProf">Email:</label>
-    <input type="email" id="emailProf" name="E-mail"><br>
-    <label for="dataNascProf">Data de Nascimento:</label>
-    <input type="date" id="dataNascProf" name="Data Nasc"><br>
-    <label for="telFixoProf">Telefone Fixo:</label>
-    <input type="tel" id="telFixoProf" name="Tel FIxo"><br>
-    <label for="celularProf">Celular:</label>
-    <input type="tel" id="celularProf" name="Celular"><br>
-    <label for="areaAtuacao">Área de Atuação:</label>
-    <input type="text" id="areaAtuacao" name="Área"><br>
-    <label for="matriculaProf">Matrícula:</label>
-    <input type="text" id="matriculaProf" name="Matricula"><br>
-    <label for="lattesProf">Lattes:</label>
-    <input type="url" id="lattesProf" name="Lattes"><br>
-  </form>
-
-  <form id="formAluno" style="display: none;">
-    <h2>Formulário para Aluno</h2>
-    <label for="nomeAluno">Nome:</label>
-    <input type="text" id="nomeAluno" name="Nome "><br>
-    <label for="emailAluno">Email:</label>
-    <input type="email" id="emailAluno" name="E-mail "><br>
-    <label for="dataNascAluno">Data de Nascimento:</label>
-    <input type="date" id="dataNascAluno" name="Data Nasc"><br>
-    <label for="telFixoAluno">Telefone Fixo:</label>
-    <input type="tel" id="telFixoAluno" name="Tel Fixo"><br>
-    <label for="celularAluno">Celular:</label>
-    <input type="tel" id="celularAluno" name="celular"><br>
-    <label for="curso">Curso:</label>
-    <input type="text" id="curso" name="Curso "><br>
-    <label for="matriculaAluno">Matrícula:</label>
-    <input type="text" id="matriculaAluno" name="Matricula "><br>
-  </form>
-
-  <button type="button" onclick="mostrarValores()">Enviar</button>
-  <button type="button" onclick="limparFormulario()">Limpar</button>
-  <button type="button" onclick="voltarPaginaAnterior()">Voltar</button>
+  <div class="container">
+    <form id="cadastro">
+      <h2>Formulário de Cadastro:</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <label for="nome">Nome:</label>
+          <input class="form-control" type="text" id="nome" name="nome" required />
+        </div>
+        <div class="col-md-8">
+          <label for="email">E-mail:</label>
+          <input class="form-control" type="email" id="email" name="email" required />
+        </div>
+        <div class="col-md-4">
+          <label for="dataNasc">Data de nascimento:</label>
+          <input class="form-control" type="date" id="dataNasc" name="dataNasc" required />
+        </div>
+        <div class="col-md-4">
+          <label for="telefoneFixo">Telefone Fixo:</label>
+          <input class="form-control" type="text" id="telefoneFixo" name="telefoneFixo" required />
+        </div>
+        <div class="col-md-4">
+          <label for="telefoneCelular">Telefone celular:</label>
+          <input class="form-control" type="text" id="telefoneCelular" name="telefoneCelular" required />
+        </div>
+        <div class="col-md-4">
+          <label>
+            <input type="radio" name="tipoUsuario" value="professor" />
+            Professor </label><br />
+          <label>
+            <input type="radio" name="tipoUsuario" value="aluno" />
+            Aluno
+          </label>
+        </div>
+        <div class="col-md-4" name="area">
+          <label for="area">Area:</label>
+          <input class="form-control" type="text" id="area" />
+        </div>
+        <div class="col-md-4" name="matricula">
+          <label for="matricula">Matricula:</label>
+          <input class="form-control" type="number" id="matricula" required />
+        </div>
+        <div class="col-md-4" name="lattes">
+          <label for="lattes">Lattes:</label>
+          <input class="form-control" type="text" id="lattes" />
+        </div>
+        <div class="col-md-4" name="curso">
+          <label for="curso">Curso:</label>
+          <input class="form-control" type="text" id="curso" />
+        </div>
+        <div class="col-md-12" style="margin-top: 15px">
+          <input type="submit" value="Cadastrar" class="btn btn-primary btn-lg" style="width: 12,5%" />
+          <a href="atividade4.html" class="btn btn-primary btn-lg" style="width: 12,5%" >Voltar</a>
+        </div>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
