@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="../img/tarefas.png" type="image/x-icon">
-<link rel="stylesheet" href="exerc2.css">
-<title>Carro Formulário</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/tarefas.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="exerc2.css">
+    <title>Carro Formulário</title>
 </head>
 <body>
-    <h1>Carro Formulario</h1>
-    <form id="carForm">
-        <label for="marca">Marca:</label>
-        <input type="text" id="marca" name="marca"><br>
-
-        <label for="modelo">Modelo:</label>
-        <input type="text" id="modelo" name="modelo"><br>
-
-        <label for="ano">Ano:</label>
-        <input type="number" id="ano" name="ano"><br>
-
-        <label for="cor">Cor:</label>
-        <input type="text" id="cor" name="cor"><br>
-
-        <label for="kilometragem">Kilometragem:</label>
-        <input type="number" id="kilometragem" name="kilometragem"><br>
-
-        <label for="valor_fipe">Valor FIPE:</label>
-        <input type="number" id="valor_fipe" name="valor_fipe"><br>
-
-        <div class="button-container">
-            <button type="button" id="btnVoltar" onclick="window.history.back()">Voltar</button>
-            <button type="button" onclick="calcularCarro()">Calcular</button>
-        </div>
-    </form>
-
-    <p id="resultado"></p>
-  <script src="exerc2.js"></script>
+    <div class="container mt-5">
+        <h1>Carro Formulário</h1>
+        <form id="carForm">
+            <div class="form-group">
+                <label for="marca">Marca:</label>
+                <input type="text" class="form-control" id="marca" name="marca">
+            </div>
+            <div class="form-group">
+                <label for="modelo">Modelo:</label>
+                <input type="text" class="form-control" id="modelo" name="modelo">
+            </div>
+            <div class="form-group">
+                <label for="ano">Ano:</label>
+                <input type="number" class="form-control" id="ano" name="ano">
+            </div>
+            <div class="form-group">
+                <label for="cor">Cor:</label>
+                <input type="text" class="form-control" id="cor" name="cor">
+            </div>
+            <div class="form-group">
+                <label for="kilometragem">Kilometragem:</label>
+                <input type="number" class="form-control" id="kilometragem" name="kilometragem">
+            </div>
+            <div class="form-group">
+                <label for="valor_fipe">Valor FIPE:</label>
+                <input type="number" class="form-control" id="valor_fipe" name="valor_fipe">
+            </div>
+            <div class="button-container">
+                <button type="button" class="btn btn-secondary" id="btnVoltar" onclick="window.history.back()">Voltar</button>
+                <button type="button" class="btn btn-primary" onclick="calcularCarro()">Calcular</button>
+            </div>
+        </form>
+        <p id="resultado"></p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="exerc2.js"></script>
 </body>
 </html>
