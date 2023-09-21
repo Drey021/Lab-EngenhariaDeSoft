@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letreiro</title>
+    <link rel="shortcut icon" href="../img/tarefas.png" type="image/x-icon">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">  
+        function MeuTexto({TextoAparecendo}) {
+            return (
+                <>
+                    <h1>{TextoAparecendo}</h1>
+                </>
+            )
+        }
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        const EscritaTexto = {
+            textoTotal: "Venha Estudar na Fatec!",
+            textoAtual: "",
+            i: 0
+        };
+        function exibirTexto() {
+            if (EscritaTexto.i <= EscritaTexto.textoTotal.length) {
+                EscritaTexto.textoAtual = EscritaTexto.textoTotal.slice(0, EscritaTexto.i);
+                root.render(<MeuTexto TextoAparecendo={EscritaTexto.textoAtual} />);
+                EscritaTexto.i++;
+                setTimeout(exibirTexto, 200); // Tempo entre cada caractere sera exibido
+            } 
+        }
+        exibirTexto();
+    </script>
+    <button>
+        <a href="atividade5.html">Voltar</a>
+    </button>
+</body>
+</html>
