@@ -1,0 +1,15 @@
+.letreiro {
+    text-align: center;
+  }
+  
+  .letreiro h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .letreiro-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: blue;
+  }
+  
